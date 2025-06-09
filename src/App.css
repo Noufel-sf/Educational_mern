@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Kapakana:wght@400;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+.title{
+    font-family: "Kapakana", cursive;
+}
+
+:root{
+  --primary-color:#CF138A ;
+  --secondary-color:#FF2B6E ;
+  --border-color:ring-pink-400 ;
+}
