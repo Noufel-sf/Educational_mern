@@ -55,7 +55,7 @@ function Cart() {
 
         <div className="mt-6 flex justify-between items-center border-t pt-4">
           <span className="text-xl font-semibold">Total:</span>
-          <span className="text-xl font-bold">
+          <span className="text-xl font-bold text-[var(--primary-color)]">
             {localCart.reduce((total, item) => total + (item.price * item.Qty), 0)}$
           </span>
         </div>

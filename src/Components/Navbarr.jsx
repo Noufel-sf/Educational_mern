@@ -18,8 +18,8 @@ function Navbarr() {
     //          }}>
     >
       <div className="flex items-center justify-between mx-auto w-[80%]">
-        <div className="text-[var(--secondary-color)] text-2xl font-bold  lg:text-5xl title capitalize">
-          food shop
+        <div className="text-[var(--secondary-color)] text-2xl font-bold  lg:text-5xl title uppercase">
+          web shop
         </div>
         <div className="md:hidden">
           <button
@@ -48,21 +48,21 @@ function Navbarr() {
         >
           <Link
             to="/"
-            className="title block py-2 capitalize px-4 text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
+            className="title block py-2 uppercase px-4 text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
             onClick={() => setOpen(false)}
           >
             Home
           </Link>
           <Link
             to="/cakes"
-            className="title capitalize block py-2 px-4 text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
+            className="title uppercase block py-2 px-4 text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
             onClick={() => setOpen(false)}
           >
-            foods
+            products
           </Link>
           <Link
             to="/about"
-            className="title block py-2 px-4 text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
+            className="title uppercase py-2 px-4 text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
             onClick={() => setOpen(false)}
           >  
           {/* the name of the link must be like the name of the one in the route pages  */}
@@ -70,7 +70,7 @@ function Navbarr() {
           </Link>
           <Link
             to="/contact"
-            className="title block py-2 px-4 capitalize text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
+            className="title uppercase py-2 px-4 capitalize text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
             onClick={() => setOpen(false)}
           >
             Contact

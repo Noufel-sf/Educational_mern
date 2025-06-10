@@ -15,7 +15,7 @@ function Contact() {
             <input
               type="text"
               placeholder="Your name"
-              className="p-3 rounded-lg border border-orange-300 outline-none focus:ring-2 focus:ring-pink-400"
+              className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400"
             />
           </div>
 
@@ -24,7 +24,7 @@ function Contact() {
             <input
               type="email"
               placeholder="your@email.com"
-              className="p-3 rounded-lg border border-orange-300 outline-none focus:ring-2 focus:ring-pink-400"
+              className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400"
             />
           </div>
 
@@ -33,7 +33,7 @@ function Contact() {
             <textarea
               placeholder="Tell us what’s on your mind..."
               rows={5}
-              className="p-3 rounded-lg border border-orange-300 outline-none focus:ring-2 focus:ring-pink-400 resize-none"
+              className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 resize-none"
             ></textarea>
           </div>
 

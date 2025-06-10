@@ -21,7 +21,7 @@ function Cartitem({
         <div>
           <h3 className="text-xl font-semibold">{category}</h3>
           <p className="text-sm text-gray-500">{name}</p>
-          <p className="text-sm text-[var(--secondary-color)] font-bold">Price: {price}</p>
+          <p className="text-sm text-[var(--primary-color)] font-bold">Price: {price}</p>
         </div>
       </div>
       <div className="flex items-center gap-4">

@@ -2,10 +2,10 @@ import React from "react";
 import Banner from "./Homepage/Banner";
 
 
-import Cake1 from '../assests/food2-removebg-preview.png';
-import Cake2 from '../assests/food1-removebg-preview.png';
-import Cake3 from '../assests/food2-removebg-preview.png';
-import Cake4 from '../assests/food1-removebg-preview.png'  ;
+import Cake1 from '../assests/jacket-4.jpg';
+import Cake2 from '../assests/jacket-2.jpg';
+import Cake3 from '../assests/jacket-4.jpg';
+import Cake4 from '../assests/jacket-1.jpg'  ;
 
 
 import Cake from "./Cakespage/Cake";
@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 import { useCart } from './CartContext';
 
 const Cakeslist = [
-  { img: Cake1, name: "pizza",  price: 20 ,category:"chocolate",isAdded: false,Qty:0 },
-  { img: Cake2, name: "Mixed Grill Platter",    price: 18 ,category:"chocolate",isAdded: false,Qty:0 },
-  { img: Cake3, name: "Red Velvet pizza", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
-  { img: Cake4, name: "hamburger", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake1, name: "Smart Fitness Watch",  price: 20 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake2, name: "jacket",    price: 18 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake3, name: "Running T-shirt", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake4, name: "Desingner handbag", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
 ];
 
 function Owncake() {
@@ -26,12 +26,12 @@ function Owncake() {
   return (
     <div className="max-w-[80%] mx-auto bg-white p-8 mt-12 title">
       <h2 className="text-3xl lg:text-5xl title capitalize font-bold text-center mb-6 text-[var(--secondary-color)]">
-        Create Your Own Cake
+        Order Your Own product
       </h2>
       <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-gray-700">
-            Cake Flavor
+          <label className=" capitalize block text-sm font-bold text-gray-700">
+            name
           </label>
           <input
             type="text"
@@ -42,12 +42,12 @@ function Owncake() {
 
         <div>
           <label className="block text-sm font-bold text-gray-700">
-            Cake Size
+            product Size
           </label>
           <select className="mt-1 block w-full rounded-md shadow-md p-3">
-            <option>Small (6 inch)</option>
-            <option>Medium (8 inch)</option>
-            <option>Large (10 inch)</option>
+            <option>Small </option>
+            <option>Medium</option>
+            <option>Large </option>
           </select>
         </div>
 
@@ -95,10 +95,10 @@ function Owncake() {
       </form>
       <div className="mt-30 flex flex-col items-center justify-center mx-auto gap-25 ">
         <h1 className="text-3xl lg:text-6xl capitalize text-center font-bold mt-10 title text-[var(--secondary-color)]">
-          Explore our foods
+          Explore our products
         </h1>
         <p className="text-center text-gray-700  mt-12 text-2xl lg:text-4xl">
-          Explore our delicious range of cakes, perfect for any occasion!
+          Explore our delicious range of products, perfect for any occasion!
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8 mt-10 px-4">
           {Cakeslist.map((cake, index) => (
@@ -116,7 +116,7 @@ function Owncake() {
         </div>
         <Link to="/cakes">
           <button className="bg-[var(--secondary-color)]  hover:bg-[var(--primary-color)] transition duration-300  capitalize text-white py-4 px-12 font-bold cursor-pointer rounded-full text-2xl title">
-            Explore all cakes
+            Explore all products
           </button>
         </Link>
       </div>

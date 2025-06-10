@@ -4,7 +4,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-[var(--secondary-color)] text-gray-700 py-10 mt-16 title">
+    <footer className="bg-[var(--secondary-color)] text-gray-200 py-10 mt-16 title">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         
         {/* Column 1 - Products */}

@@ -1,10 +1,12 @@
 import React from "react";
-import cakeImage from "../../assests/main_img.png";
-import Cake1 from "../../assests/order-3.png";
-import Cake2 from "../../assests/food4.png";
-import Headerimg from "../../assests/Headerimg.png";
-import Cake3 from "../../assests/order-3.png";
-import Cake4 from "../../assests/order-3.png";
+import cakeImage from "../../assests/jacket-4.jpg"; ;
+import Cake1 from "../../assests/jacket-1.jpg" ;
+import Cake2 from "../../assests/jacket-4.jpg" ;
+import Headerimg from "../../assests/jacket-4.jpg";
+import Cake3 from "../../assests/jacket-2.jpg";
+import Cake4 from "../../assests/shirt-1.jpg" ;
+
+
 import Cake from "../Cakespage/Cake";
 import Services from "./Services";
 import Banner from "./Banner";
@@ -12,10 +14,10 @@ import { Link } from "react-router-dom";
 import { useCart } from '../CartContext';
 
 const Cakeslist = [
-  { img: Cake1, name: "hamburger", price: 20  ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake2, name: "pizza", price: 18    ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake3, name: "Mixed Grill Platter", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake4, name: "Mixed Grill Platter", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake1, name: "Ergonomic Office Chair", price: 20  ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake2, name: "sports", price: 18    ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake3, name: "Smart Fitness Watch", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake4, name: "Ergonomic Office Chair", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
 ];
 
 
@@ -44,7 +46,7 @@ function Hero() {
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              Make <br /> your own plate
+             <span className="capitalize text-[var(--primary-color)]"> shop on</span> <br /> our website
             </h2>
             <p
               className="title w-1/2"
@@ -62,7 +64,7 @@ function Hero() {
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              make it
+              order now
             </button>
             </Link>
           </div>
@@ -84,7 +86,7 @@ function Hero() {
       <Services />
       <section className="flex flex-col mt-40 items-center justify-center  mx-auto gap-25 ">
         <h1 className="capitalize text-2xl lg:text-5xl font-bold text-[var(--secondary-color)] title">
-          Explore our foods
+          Explore our products
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2  place-items-center lg:grid-cols-4 gap-21 mt-10 px-4">
           {Cakeslist.map((cake, index) => (
@@ -102,7 +104,7 @@ function Hero() {
         </div>
         <Link to="/cakes">
           <button className="bg-[var(--secondary-color)]  hover:bg-[var(--primary-color)] transition duration-300  capitalize text-white py-4 px-12 font-bold cursor-pointer rounded-full text-2xl title">
-            Explore all foods
+            Explore all products
           </button>
           {" "}
         </Link>
