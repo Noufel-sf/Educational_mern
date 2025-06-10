@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Homepage/Banner';
-import Aboutcake from '../assets/rose2.png'
+import Aboutcake from '../assests/food7.png'
 
 function AboutUs() {
   return (
@@ -8,10 +8,10 @@ function AboutUs() {
 
      <div className="flex flex-col items-center justify-between mx-auto lg:flex-row gap-10 max-w-7xl">   
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 title" data-aos="fade-up" 
+        <h2 className="text-4xl md:text-5xl font-bold text-[var(--secondary-color)] mb-6 title" data-aos="fade-up" 
             data-aos-duration='1000'>About Us</h2>
         <p className="text-lg md:text-xl text-gray-700 mb-10 leading-relaxed">
-          At <span className="font-semibold text-[var(--primary-color)]">Sweet Treats Bakery</span>, we believe every celebration deserves a special cake.
+          At <span className="font-semibold text-[var(--secondary-color)]">Sweet Treats Bakery</span>, we believe every celebration deserves a special cake.
           Our journey started with a simple passion for baking, and today, we're proud to create
           custom cakes that bring joy, color, and flavor to your most memorable moments.
         </p>

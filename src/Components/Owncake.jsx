@@ -1,19 +1,22 @@
 import React from "react";
 import Banner from "./Homepage/Banner";
-import Cake1 from "../assets/rose.png";
-import Cake2 from "../assets/rose2.png";
-import Cake3 from "../assets/rose3.png";
-import Cake4 from "../assets/rose4.png";
+
+
+import Cake1 from '../assests/food2-removebg-preview.png';
+import Cake2 from '../assests/food1-removebg-preview.png';
+import Cake3 from '../assests/food2-removebg-preview.png';
+import Cake4 from '../assests/food1-removebg-preview.png'  ;
+
 
 import Cake from "./Cakespage/Cake";
 import { Link } from "react-router-dom";
 import { useCart } from './CartContext';
 
 const Cakeslist = [
-  { img: Cake1, name: "Chocolate Cake",  price: 20 ,category:"chocolate",isAdded: false,Qty:0 },
-  { img: Cake2, name: "Vanilla Cake",    price: 18 ,category:"chocolate",isAdded: false,Qty:0 },
-  { img: Cake3, name: "Red Velvet Cake", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
-  { img: Cake4, name: "Red Velvet Cake", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake1, name: "pizza",  price: 20 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake2, name: "Mixed Grill Platter",    price: 18 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake3, name: "Red Velvet pizza", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
+  { img: Cake4, name: "hamburger", price: 22 ,category:"chocolate",isAdded: false,Qty:0 },
 ];
 
 function Owncake() {
@@ -84,17 +87,17 @@ function Owncake() {
         <div className="md:col-span-2 text-center">
           <button
             type="submit"
-            className="bg-[var(--secondary-color)] hover:bg-[var(--secondary-color)] text-white font-semibold px-6 py-3 rounded-lg mt-4 cursor-pointer transition duration-300 text-lg title"
+            className="bg-[var(--secondary-color)] hover:bg-[var(--primary-color)] text-white font-semibold px-6 py-3 rounded-lg mt-4 cursor-pointer transition duration-300 text-lg title"
           >
             Submit Request
           </button>
         </div>
       </form>
       <div className="mt-30 flex flex-col items-center justify-center mx-auto gap-25 ">
-        <h1 className="text-3xl lg:text-6xl text-center font-bold mt-10 title text-[var(--primary-color)]">
-          Cakes
+        <h1 className="text-3xl lg:text-6xl capitalize text-center font-bold mt-10 title text-[var(--secondary-color)]">
+          Explore our foods
         </h1>
-        <p className="text-center mt-12 text-2xl lg:text-4xl">
+        <p className="text-center text-gray-700  mt-12 text-2xl lg:text-4xl">
           Explore our delicious range of cakes, perfect for any occasion!
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8 mt-10 px-4">
@@ -112,7 +115,7 @@ function Owncake() {
           ))}
         </div>
         <Link to="/cakes">
-          <button className="bg-[var(--primary-color)]  hover:bg-[var(--secondary-color)] transition duration-300  capitalize text-white py-4 px-12 font-bold cursor-pointer rounded-full text-2xl title">
+          <button className="bg-[var(--secondary-color)]  hover:bg-[var(--primary-color)] transition duration-300  capitalize text-white py-4 px-12 font-bold cursor-pointer rounded-full text-2xl title">
             Explore all cakes
           </button>
         </Link>

@@ -1,10 +1,10 @@
 import React from "react";
-import cakeImage from "../../assets/rose.png";
-import headerimg from "../../assets/headerimg.png";
-import Cake1 from "../../assets/Cakebanner.png";
-import Cake2 from "../../assets/rose2.png";
-import Cake3 from "../../assets/rose3.png";
-import Cake4 from "../../assets/rose4.png";
+import cakeImage from "../../assests/main_img.png";
+import Cake1 from "../../assests/order-3.png";
+import Cake2 from "../../assests/food4.png";
+import Headerimg from "../../assests/Headerimg.png";
+import Cake3 from "../../assests/order-3.png";
+import Cake4 from "../../assests/order-3.png";
 import Cake from "../Cakespage/Cake";
 import Services from "./Services";
 import Banner from "./Banner";
@@ -12,10 +12,10 @@ import { Link } from "react-router-dom";
 import { useCart } from '../CartContext';
 
 const Cakeslist = [
-  { img: Cake1, name: "Chocolate Cake", price: 20  ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake2, name: "Vanilla Cake", price: 18    ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake3, name: "Red Velvet Cake", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake4, name: "Red Velvet Cake", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake1, name: "hamburger", price: 20  ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake2, name: "pizza", price: 18    ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake3, name: "Mixed Grill Platter", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake4, name: "Mixed Grill Platter", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
 ];
 
 
@@ -27,13 +27,16 @@ function Hero() {
   return (
     <div className="">
       <div
-        className=" h-[70vh] "
-        style={{
-          backgroundImage: `url(${headerimg})`,
-          backgroundSize: "cover",
-        }}
+        className=" h-[60vh]  "
+        //  style={{
+        //    backgroundImage: `url(${Headerimg})`,
+        //    backgroundSize: "cover",
+        //     backgroundPosition: "right",
+        //    backgroundRepeat: "no-repeat",
+        //    backgroundAttachment: "fixed",
+        //  }}
       >
-        <div className="flex flex-col justify-between max-w-7xl md:flex-row mx-auto items-center  p-10">
+        <div className="flex flex-col mt-12 z-[12] justify-between max-w-7xl md:flex-row mx-auto items-center  p-10">
           {/* Left Text Section */}
           <div className="flex title flex-col gap-12 text-center md:text-left items-center md:items-start">
             <h2
@@ -41,7 +44,7 @@ function Hero() {
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              Make <br /> your own cake
+              Make <br /> your own plate
             </h2>
             <p
               className="title w-1/2"
@@ -79,11 +82,11 @@ function Hero() {
 
       {/* Services Section */}
       <Services />
-      <section className="flex flex-col mt-40 items-center justify-center mt-10 mx-auto gap-25 ">
-        <h1 className="capitalize text-2xl lg:text-5xl font-bold text-[var(--primary-color)] title">
-          Explore our Cakes
+      <section className="flex flex-col mt-40 items-center justify-center  mx-auto gap-25 ">
+        <h1 className="capitalize text-2xl lg:text-5xl font-bold text-[var(--secondary-color)] title">
+          Explore our foods
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8 mt-10 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2  place-items-center lg:grid-cols-4 gap-21 mt-10 px-4">
           {Cakeslist.map((cake, index) => (
             <Cake
               key={index}
@@ -93,12 +96,13 @@ function Hero() {
               Qty={cake.Qty}
               AddTocart={() => addToCart(cake)}
               data-category={cake.category}
+              loading="lazy"
             />
           ))}
         </div>
         <Link to="/cakes">
-          <button className="bg-[var(--primary-color)]  hover:bg-[var(--secondary-color)] transition duration-300  capitalize text-white py-4 px-12 font-bold cursor-pointer rounded-full text-2xl title">
-            Explore all cakes
+          <button className="bg-[var(--secondary-color)]  hover:bg-[var(--primary-color)] transition duration-300  capitalize text-white py-4 px-12 font-bold cursor-pointer rounded-full text-2xl title">
+            Explore all foods
           </button>
           {" "}
         </Link>

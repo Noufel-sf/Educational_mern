@@ -1,15 +1,14 @@
 import React from 'react';
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserCheck } from "react-icons/fa";
-import { BsCake2Fill } from "react-icons/bs";
-
+import { MdOutlineFoodBank } from "react-icons/md";
 function Services() {
   const services = [
     {
-      title: "Custom Cakes",
+      title: "Custom foods",
       description:
         "Design your own cake with personalized flavors, shapes, and decorations. Perfect for birthdays, weddings, or any special event!",
-      icon: <BsCake2Fill className="text-[var(--secondary-color)]" />,
+      icon: <MdOutlineFoodBank className="text-[var(--secondary-color)]" />,
     },
     {
       title: "Same-Day Delivery",
@@ -28,7 +27,7 @@ function Services() {
   return (
     <section className="w-full py-16 px-6 md:px-20 title mt-120 lg:mt-40">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-12">Our Services</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-[var(--secondary-color)] mb-12">Our Services</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <div

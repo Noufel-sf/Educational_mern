@@ -32,7 +32,7 @@ function Cart() {
 
   return (
     <div className="max-w-5xl mx-auto p-8 title">
-      <h1 className="text-4xl font-bold mb-6 text-[var(--primary-color)]">Your Cart</h1>
+      <h1 className="text-4xl font-bold mb-6 text-[var(--secondary-color)]">Your Cart</h1>
       <div className="bg-white rounded-lg p-6">
         {localCart.length === 0 ? (
           <p className="text-center text-gray-500">Your cart is empty.</p>

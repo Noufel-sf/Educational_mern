@@ -9,7 +9,10 @@ html {
 }
 
 :root{
-  --primary-color:#CF138A ;
-  --secondary-color:#FF2B6E ;
+  --secondary-color:#FF7C19 ;
+  --primary-color:#ff303a ;
   --border-color:ring-pink-400 ;
+}
+*{
+  box-sizing: border-box;
 }
