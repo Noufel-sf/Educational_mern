@@ -42,7 +42,7 @@ function Cakes() {
       <p className='text-center mt-12 text-2xl text-gray-700  lg:text-4xl'>
         Discover our premium collection of quality products, carefully selected for your lifestyle!
       </p>
-      <ul className='flex items-center gap-5 justify-center mt-30 lg:gap-22'>
+      <ul className='flex items-center flex-wrap p-4 gap-5 justify-center mt-30 lg:gap-22'>
         {categories.map((cat) => (
           <li
             key={cat}
