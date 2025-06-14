@@ -61,7 +61,7 @@ function Cart() {
         </div>
 
         <div className="mt-6 text-right">
-          <button className="bg-[var(--secondary-color)] hover:bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg cursor-pointer transition-colors duration-300">
+          <button className="bg-[var(--secondary-color)] font-bold hover:bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg cursor-pointer transition-colors duration-300">
             Proceed to Checkout
           </button>
         </div>

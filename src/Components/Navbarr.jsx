@@ -19,7 +19,7 @@ function Navbarr() {
     >
       <div className="flex items-center justify-between mx-auto w-[80%]">
         <div className="text-[var(--secondary-color)] text-2xl font-bold  lg:text-5xl title uppercase">
-          web shop
+          <h1><span className="m-3 text-[var(--primary-color)]">book</span>store</h1>
         </div>
         <div className="md:hidden">
           <button
@@ -58,7 +58,7 @@ function Navbarr() {
             className="title uppercase block py-2 px-4 text-[var(--secondary-color)] hover:text-[var(--primary-color)] font-bold text-2xl lg:text-3xl"
             onClick={() => setOpen(false)}
           >
-            products
+            books
           </Link>
           <Link
             to="/about"

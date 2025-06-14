@@ -5,27 +5,27 @@ import { useCart } from '../CartContext';
 import Cake from './Cake';
 import Services from '../Homepage/Services';
 
-import Cake1 from '../../assests/clothes-3.jpg' ;
-import Cake2 from '../../assests/clothes-1.jpg'; 
-import Cake3 from '../../assests/jacket-1.jpg';
-import Cake4 from '../../assests/jacket-4.jpg';
-import Cake5 from '../../assests/shirt-1.jpg';
-import Cake6 from '../../assests/shirt-2.jpg'  ;
-import Cake7 from '../../assests/sports-2.jpg'  ;
-import Cake8 from '../../assests/jacket-2.jpg' ;
+import Cake1 from '../../assests/48 laws of power.png' ;
+import Cake2 from '../../assests/limitless.jpg'; 
+import Cake3 from '../../assests/habits3.jpg';
+import Cake4 from '../../assests/compond.jpg';
+import Cake5 from '../../assests/nomore.jpg' ;
+import Cake6 from '../../assests/crimeandpun.png'  ;
+import Cake7 from '../../assests/49552.jpg'  ;
+import Cake8 from '../../assests/crimeandpun.png' ;
 
 const Cakeslist = [
-  { img: Cake1, name: 'Premium Cotton T-Shirt', price: 20, category: 'clothing' ,isAdded:false,Qty:0},
-  { img: Cake2, name: 'Casual Denim Jacket', price: 18, category: 'clothing'   ,isAdded:false,Qty:0},
-  { img: Cake3, name: 'Designer Leather Jacket', price: 22, category: 'clothing'    ,isAdded:false,Qty:0},
-  { img: Cake4, name: 'Wireless Bluetooth Headphones', price: 19, category: 'electronics'         ,isAdded:false,Qty:0},
-  { img: Cake5, name: 'Smart Fitness Watch', price: 39, category: 'electronics' ,isAdded:false,Qty:0},
-  { img: Cake6, name: 'Ergonomic Office Chair', price: 29, category: 'furniture' ,isAdded:false,Qty:0},
-  { img: Cake7, name: 'Running Sports Shoes', price: 79, category: 'footwear'   ,isAdded:false,Qty:0},
-  { img: Cake8, name: 'Designer Handbag', price: 69, category: 'accessories'       ,isAdded:false,Qty:0},
+  { img: Cake1, name: 'The 48 Laws of Power', price: 20, category: 'self-help', author: 'Robert Greene', isAdded: false, Qty: 0},
+  { img: Cake2, name: 'Limitless', price: 18, category: 'self-help', author: 'Jim Kwik', isAdded: false, Qty: 0},
+  { img: Cake3, name: 'Atomic Habits', price: 22, category: 'self-help', author: 'James Clear', isAdded: false, Qty: 0},
+  { img: Cake4, name: 'The Compound Effect', price: 19, category: 'business', author: 'Darren Hardy', isAdded: false, Qty: 0},
+  { img: Cake5, name: 'No More Mr. Nice Guy', price: 39, category: 'self-help', author: 'Robert A. Glover', isAdded: false, Qty: 0},
+  { img: Cake6, name: 'Crime and Punishment', price: 29, category: 'fiction', author: 'Fyodor Dostoevsky', isAdded: false, Qty: 0},
+  { img: Cake7, name: 'The Art of War', price: 79, category: 'philosophy', author: 'Sun Tzu', isAdded: false, Qty: 0},
+  { img: Cake8, name: 'The 7 Habits of Highly Effective People', price: 69, category: 'self-help', author: 'Stephen R. Covey', isAdded: false, Qty: 0},
 ];
 
-const categories = ['all', 'clothing', 'electronics', 'furniture', 'footwear', 'accessories'];
+const categories = ['all', 'self-help', 'business', 'fiction', 'philosophy', 'biography'];
 
 function Cakes() {
   const { addToCart } = useCart();
@@ -38,9 +38,9 @@ function Cakes() {
 
   return (
     <div className='title bg-white mt-40'>
-      <h1 className='text-3xl lg:text-6xl text-center font-bold mt-10 text-[var(--secondary-color)]'>Our Products</h1>
+      <h1 className='text-3xl lg:text-6xl text-center font-bold mt-10 text-[var(--secondary-color)] capitalize'>Our books</h1>
       <p className='text-center mt-12 text-2xl text-gray-700  lg:text-4xl'>
-        Discover our premium collection of quality products, carefully selected for your lifestyle!
+        Discover our premium collection of quality books, carefully selected for your category!
       </p>
       <ul className='flex items-center flex-wrap p-4 gap-5 justify-center mt-30 lg:gap-22'>
         {categories.map((cat) => (
@@ -62,6 +62,7 @@ function Cakes() {
             img={cake.img}
             loading="lazy"
             name={cake.name}
+            author={cake.author}
             price={cake.price}
             Qty={cake.Qty}
             data-category={cake.category}

@@ -19,7 +19,7 @@ function Cartitem({
           loading="lazy"
         />
         <div>
-          <h3 className="text-xl font-semibold">{category}</h3>
+          <h3 className="text-xl font-semibold capitalize">{category}</h3>
           <p className="text-sm text-gray-500">{name}</p>
           <p className="text-sm text-[var(--primary-color)] font-bold">Price: {price}</p>
         </div>
@@ -33,7 +33,7 @@ function Cartitem({
           +
         </span>
         <button
-          className=" hover:bg-[var(--primary-color)] cursor-pointer bg-[var(--secondary-color)] px-4 py-2 rounded-lg text-white transition-colors duration-300"
+          className=" hover:bg-[var(--primary-color)] font-bold cursor-pointer bg-[var(--secondary-color)] px-4 py-2 rounded-lg text-white transition-colors duration-300"
           onClick={Delete_cartItem}
         >
           Remove

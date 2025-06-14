@@ -1,10 +1,10 @@
 import React from "react";
-import cakeImage from "../../assests/jacket-4.jpg"; ;
-import Cake1 from "../../assests/jacket-1.jpg" ;
-import Cake2 from "../../assests/jacket-4.jpg" ;
-import Headerimg from "../../assests/jacket-4.jpg";
-import Cake3 from "../../assests/jacket-2.jpg";
-import Cake4 from "../../assests/shirt-1.jpg" ;
+
+import Cake1 from "../../assests/48 laws of power.png" ;
+import Cake2 from "../../assests/artofwar.jpg" ;
+import Headerimg from "../../assests/Banner4.png";
+import Cake3 from "../../assests/habits.jpg";
+import Cake4 from "../../assests/7habits.jpg" ;
 
 
 import Cake from "../Cakespage/Cake";
@@ -14,10 +14,10 @@ import { Link } from "react-router-dom";
 import { useCart } from '../CartContext';
 
 const Cakeslist = [
-  { img: Cake1, name: "Ergonomic Office Chair", price: 20  ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake2, name: "sports", price: 18    ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake3, name: "Smart Fitness Watch", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
-  { img: Cake4, name: "Ergonomic Office Chair", price: 22 ,category:"lemon cake",isAdded:false,Qty:0},
+  { img: Cake1, name: "The 48 Laws of Power", price: 20, category: "self-help", author: "Robert Greene", isAdded: false, Qty: 0 },
+  { img: Cake2, name: "The Art of War", price: 18, category: "philosophy", author: "Sun Tzu", isAdded: false, Qty: 0 },
+  { img: Cake3, name: "Atomic Habits", price: 22, category: "self-help", author: "James Clear", isAdded: false, Qty: 0 },
+  { img: Cake4, name: "The 7 Habits of Highly Effective People", price: 22, category: "self-help", author: "Stephen R. Covey", isAdded: false, Qty: 0 },
 ];
 
 
@@ -29,38 +29,39 @@ function Hero() {
   return (
     <div className="">
       <div
-        className=" h-[60vh]  "
-        //  style={{
-        //    backgroundImage: `url(${Headerimg})`,
-        //    backgroundSize: "cover",
-        //     backgroundPosition: "right",
-        //    backgroundRepeat: "no-repeat",
-        //    backgroundAttachment: "fixed",
-        //  }}
+        className=" lg:h-[100vh] h-[70vh] "
+         style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${Headerimg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "right",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+         }}
       >
-        <div className="flex flex-col mt-12 z-[12] justify-between max-w-7xl md:flex-row mx-auto items-center  p-10">
+        <div className=" p-10 flex flex-col md:flex-row items-center justify-between h-full max-w-[80%] mx-auto">
           {/* Left Text Section */}
-          <div className="flex title flex-col gap-12 text-center md:text-left items-center md:items-start">
+          <div className="flex title flex-col justify-center gap-8  md:text-left lg:items-start items-center text-center">
             <h2
-              className="capitalize text-5xl md:text-5xl lg:text-7xl font-bold text-[var(--secondary-color)] leading-snug"
+              className="capitalize text-5xl md:text-5xl lg:text-9xl font-bold text-white leading-snug"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-             <span className="capitalize text-[var(--primary-color)]"> shop on</span> <br /> our website
+             <span className="capitalize text-[var(--primary-color)]"> Read books on</span> <br /> our website
             </h2>
             <p
-              className="title w-1/2"
+              className="title w-1/2 text-white font-bold"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
               {" "}
               Lorem ipsum Unde, ea neque eaque in a quam odit officia pariatur
               animi nihil magnam labore enim consequuntur at facere, eaque culpa
+              suscipit officiis facilis quod animi nihil magnam labore enim consequuntur at facere, eaque culpa
               suscipit officiis facilis quod.
             </p>
             <Link to="/owncake"> 
             <button
-              className="bg-[var(--secondary-color)] text-white font-semibold px-15 text-3xl title py-3 rounded-full capitalize cursor-pointer w-fit self-center md:self-start hover:bg-[var(--secondary-color)] transition"
+              className="bg-[var(--primary-color)] text-white font-semibold px-15 text-3xl title py-3 rounded-full capitalize cursor-pointer w-fit self-center md:self-start"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
@@ -70,15 +71,6 @@ function Hero() {
           </div>
 
           {/* Right Image Section */}
-          <div className="mt-10 md:mt-0">
-            <img
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              src={cakeImage}
-              alt="Cake with candles"
-              className="w-[400px] md:w-[600px] lg:w-[900px]"
-            />
-          </div>
         </div>{" "}
       </div>
 
@@ -94,6 +86,7 @@ function Hero() {
               key={index}
               img={cake.img}
               name={cake.name}
+              author={cake.author}
               price={cake.price}
               Qty={cake.Qty}
               AddTocart={() => addToCart(cake)}
@@ -104,7 +97,7 @@ function Hero() {
         </div>
         <Link to="/cakes">
           <button className="bg-[var(--secondary-color)]  hover:bg-[var(--primary-color)] transition duration-300  capitalize text-white py-4 px-12 font-bold cursor-pointer rounded-full text-2xl title">
-            Explore all products
+            Explore all books
           </button>
           {" "}
         </Link>

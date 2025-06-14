@@ -1,14 +1,14 @@
 import React from 'react';
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserCheck } from "react-icons/fa";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa";
 function Services() {
   const services = [
     {
       title: "Custom foods",
       description:
         "Design your own cake with personalized flavors, shapes, and decorations. Perfect for birthdays, weddings, or any special event!",
-      icon: <FaShoppingCart className="text-[var(--secondary-color)]" />,
+      icon: <FaBookOpen className="text-[var(--secondary-color)]" />,
     },
     {
       title: "Same-Day Delivery",

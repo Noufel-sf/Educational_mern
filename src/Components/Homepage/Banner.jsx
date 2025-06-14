@@ -1,5 +1,5 @@
 import React from 'react';
-import CakeImage from '../../assests/jacket-4.jpg'; // Use your actual image path
+import CakeImage from '../../assests/limitless.jpg'; // Use your actual image path
 import { Link } from 'react-router-dom';
 
 function Banner() {
@@ -7,10 +7,10 @@ function Banner() {
     <section className=" py-20 px-6 relative overflow-hidden title mt-40">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="lg:text-5xl capitalize text-3xl md:text-4xl font-bold text-[var(--secondary-color)] mb-4">
-          order your own product
+          order your own book
         </h2>
         <p className="text-lg text-gray-700  mb-12 font-bold">
-            make it with your own requirments
+            book with your own requirments
         </p>
 
         <div className="relative flex justify-center items-center">
@@ -20,7 +20,7 @@ function Banner() {
             alt="Secret Cake"
             data-aos="fade-up" 
             data-aos-duration='1000'
-            className="w-[450px] md:w-[670px] z-10"
+            className="w-[450px] md:w-[470px] z-10"
           />
 
           {/* Example ingredient bubbles (you can position more) */}
@@ -42,7 +42,7 @@ function Banner() {
         {/* CTA Button */}
         <div className="mt-16">
           <p className="mb-4 text-gray-700 capitalize text-lg font-semibold">
-            how do you want your product? <br />
+            how do you want your book? <br />
           </p>
          <Link to="/owncake"> 
             <button className="bg-[var(--secondary-color)] capitalize cursor-pointer hover:bg-[var(--primary-color)] text-white py-3 px-8 rounded-full text-lg font-semibold transition">
