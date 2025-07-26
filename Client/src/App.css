@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Playwrite AU NSW", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title{
+  font-family: "Playwrite AU NSW", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root{
+  --secondary-color:#030201 ;
+  --primary-color:#fa4c35 ;
+  --border-color:ring-pink-400 ;
+}
+*{
+  box-sizing: border-box;
+  font-family: "Playwrite AU NSW", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
