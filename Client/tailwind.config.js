@@ -1,8 +1,9 @@
 
-
 module.exports = {
+  darkMode: 'class',
+  lightMode: 'class',
   content: [
-    "./Cake/src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
