@@ -88,7 +88,7 @@ const addCourse = async (req: Request, res: Response) => {
 
 const getAllCourses = async (req: Request, res: Response) => {
   try {
-    const courses = await Course.find().populate("owner", "name email role");
+    const courses = await Course.find().populate("owner", "name email role profileimg");
     res.status(200).json({ courses });
   } catch (error) {
     console.error("Error fetching courses:", error);
@@ -98,8 +98,8 @@ const getAllCourses = async (req: Request, res: Response) => {
 
 const getPublishedCourses = async (req: Request, res: Response) => {
   try {
-    const courses = await Course.find({ state: "published" }) // 👈 filter
-      .populate("owner", "name email role");
+    const courses = await Course.find({ state: "published" }) 
+      .populate("owner", "name email role profileimg");
 
     res.status(200).json({ courses });
   } catch (error) {
@@ -109,11 +109,10 @@ const getPublishedCourses = async (req: Request, res: Response) => {
 };
 
 
-// ✅ Get only 3 courses (home page)
 const getHomeCourses = async (req: Request, res: Response) => {
   try {
     const courses = await Course.find()
-      .populate("owner", "name email role")
+      .populate("owner", "name email role profileimg")
       .limit(3); // 👈 only 3 docs
 
     res.status(200).json({ courses });
@@ -129,7 +128,7 @@ const getCourseDetails = async (req: Request, res: Response) => {
     const { id } = req.params;
     const course = await Course.findById(id).populate(
       "owner",
-      "name email role"
+      "name email role profileimg domain"
     );
     if (!course) {
       return res.status(404).json({ message: "Course not found" });

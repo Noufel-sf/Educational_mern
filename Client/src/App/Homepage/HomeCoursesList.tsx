@@ -28,6 +28,10 @@ export default function HomeCoursesList() {
     fetchCourses();
   }, []);
 
+
+  // i have to change this to react qeury 
+
+
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const filteredCourses =

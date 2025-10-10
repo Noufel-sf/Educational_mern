@@ -103,11 +103,11 @@ function Navbarr() {
         {user ? (
           <div className="flex items-center gap-3">
             <Link to={`/${UserRole}/${user.id}`}>
-              <span
-                className="px-4 py-2 cursor-pointer rounded-full bg-[var(--primary-color)] text-white"
-              >
-                {user.name.charAt(0).toUpperCase()}
-              </span>
+              <img
+                src={user.profileimg}
+                alt={user.name}
+                className="w-10 h-10 object-cover rounded-full"
+              />
             </Link>
             <button
               onClick={logout}

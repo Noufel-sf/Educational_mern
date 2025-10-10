@@ -15,7 +15,6 @@ export const useCourses = () => {
 
 
 
-// fetch only published courses
 export const usePublishedCourses = () => {
     return useQuery<ICourse[], Error>({
     queryKey: ["publishedCourses"], // cache key
@@ -23,8 +22,8 @@ export const usePublishedCourses = () => {
       const response = await api.get("/courses/getpublishedcourses");
       return response.data.courses; // only return courses
     },
-    staleTime: 1000 * 60 * 5, // cache for 5 minutes
-    refetchOnWindowFocus: true, // refetch when tab is focused
+    staleTime: 1000 * 60 * 5, 
+    refetchOnWindowFocus: true,
 });
 };
 

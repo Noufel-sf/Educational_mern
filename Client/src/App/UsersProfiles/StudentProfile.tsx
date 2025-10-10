@@ -19,20 +19,10 @@ function StudentProfile() {
   const [formData, setFormData] = useState({
     name: user?.name || "",
     bio: user?.bio || "",
+    profileimg :user?.profileimg || "" ,
   });
   
-  const handleUpdateStudent = async () => {
-    try {
-      console.log("Updating student with data:", formData);
-      const res = await api.put(`/student/update/${user?.id}`, formData);
-      setUser(res.data.user);
-      setIsModalOpen(false);
-      toast.success("Profile updated successfully");
-    } catch (err) {
-      console.error("Update failed:", err);
-    }
-  };
-  console.log(user);
+ 
   
 
   return (
@@ -40,7 +30,7 @@ function StudentProfile() {
       {/* Left Side */}
       <div className="flex-shrink-0 relative">
         <img
-          src={"/profile.png"}
+          src={user?.profileimg}
           alt={user?.name}
           className="rounded-full w-58 h-58 object-cover shadow-md bg-[var(--secondary-color)]"
         />

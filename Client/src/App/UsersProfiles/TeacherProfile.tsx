@@ -38,10 +38,11 @@ export default function TeacherProfile() {
   } = useQuery<Teacher>({
     queryKey: ["teacher", id],
     queryFn: () => fetchTeacher(id!),
-    enabled: !!id, // only run when id exists
+    enabled: !!id, 
   });
 
-  // ✅ only owner sees controls
+  console.log("the teacher is " , teacher) ;
+  
   const isOwner = user?.id === teacher?._id;
 
 
@@ -67,7 +68,7 @@ export default function TeacherProfile() {
         {/* Left Side */}
         <div className="flex-shrink-0 relative">
           <img
-            src={"/profile.png"}
+            src={teacher?.profileimg}
             alt={teacher.name}
             className="rounded-full w-58 h-58 object-cover shadow-md bg-[var(--secondary-color)]"
           />

@@ -1,10 +1,9 @@
 const express = require("express");
-const  upload  = require("../middleware/multer"); 
+import upload from "../middleware/multer"; 
 const { addCourse , getAllCourses ,confirmCourse ,getPublishedCourses ,getHomeCourses ,getCourseDetails , DeleteCourse } = require("../controllers/courseController");
 
 const router = express.Router();
 
-// upload.fields → handle multiple files (coverImage + video)
 router.post(
   "/add",
   upload.fields([

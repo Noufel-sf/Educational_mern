@@ -23,25 +23,38 @@ export const getTeacherById = async (req: Request, res: Response) => {
   }
 };
 
-// ✅ Update teacher
+
 export const updateTeacher = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
 
-    // only allow updates if role is teacher
-    const updatedTeacher = await User.findOneAndUpdate(
-      { _id: id, role: "teacher" },
-      { $set: req.body },
-      { new: true, runValidators: true }
-    ).select("-passwordHash");
-
-    if (!updatedTeacher) {
+    const teacher = await User.findOne({ _id: id, role: "teacher" });
+    if (!teacher) {
       return res.status(404).json({ message: "Teacher not found" });
     }
 
-    res.status(200).json({ teacher: updatedTeacher });
+    const updateData: any = { ...req.body };
+
+    if (req.file) {
+      updateData.profileimg = req.file.path;
+      console.log("✅ Profile image updated:", req.file.path);
+    }else{
+      console.log("cant update the img");
+      
+    }
+
+    const updatedTeacher = await User.findByIdAndUpdate(
+      id,
+      { $set: updateData },
+      { new: true, runValidators: true }
+    ).select("-passwordHash");
+
+    res.status(200).json({
+      message: "Teacher updated successfully",
+      teacher: updatedTeacher,
+    });
   } catch (err) {
-    console.error("Error updating teacher:", err);
+    console.error("❌ Error updating teacher:", err);
     res.status(500).json({ message: "Server error", error: err });
   }
 };

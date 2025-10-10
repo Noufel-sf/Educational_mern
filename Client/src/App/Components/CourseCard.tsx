@@ -51,7 +51,7 @@ export default function CourseCard({
           <div className="flex items-center justify-between pt-2">
             <div className="flex items-center gap-2">
               <img
-                src="https://i.pravatar.cc/30"
+                src={owner?.profileimg}
                 alt={owner?.name}
                 className="w-6 h-6 rounded-full"
               />

@@ -15,6 +15,8 @@ function CourseDetails() {
       try {
         const res = await api.get(`/courses/${id}`);
         setCourse(res.data.course);
+        console.log("the course is ", res.data.course);
+        
       } catch (error) {
         console.error("Error fetching course:", error);
       }
@@ -91,10 +93,12 @@ function CourseDetails() {
 
       <Link to={`/teacher/${course.owner?._id}`}>
         <div className="flex flex-col items-start md:flex-row gap-5 cursor-pointer">
-          <div className="flex flex-col gap-3 bg-[var(--primary-color)] items-center rounded-xl p-4 ">
-            <img src="/profile.png" alt="mentor" className="w-70" />
+          <div className="flex flex-col gap-3 bg-[var(--primary-color)] items-center rounded-xl p-12 ">
+            <img src={course.owner?.profileimg} alt="mentor" className="w-40 h-40 rounded-full object-cover" />
             <h2 className="fonts text-3xl capitalize">{course.owner?.name}</h2>
-            <h4 className="fonts text-xl">{course.owner?.email}</h4>
+            <h2 className="fonts text-3xl capitalize">{course.owner?.domain}</h2>
+            {/* <h4 className="fonts text-xl">{course.owner?.email}</h4> */}
+
           </div>
         </div>
       </Link> 
