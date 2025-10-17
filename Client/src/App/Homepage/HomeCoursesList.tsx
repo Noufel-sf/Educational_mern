@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ICourse } from "../Types";
 import { motion } from "framer-motion";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 export default function HomeCoursesList() {
  
@@ -28,11 +29,12 @@ export default function HomeCoursesList() {
     fetchCourses();
   }, []);
 
-
-  // i have to change this to react qeury 
-
-
   const [selectedCategory, setSelectedCategory] = useState('all');
+
+  if (loading) {
+    return <LoadingSpinner />
+  }
+
 
   const filteredCourses =
     selectedCategory === 'all'
@@ -47,7 +49,7 @@ export default function HomeCoursesList() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="flex items-center flex-col justify-center gap-8 mt-50"
+      className="flex items-center flex-col justify-center gap-15 mt-50"
     >
         <motion.h1 
           variants={textVariant(0.2)}
@@ -61,7 +63,7 @@ export default function HomeCoursesList() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[90%] lg:max-w-[70%]"
       >
         {filteredCourses.map((course : ICourse, i :number) => (
           <motion.div

@@ -3,6 +3,7 @@ import { fadeIn, staggerContainer, textVariant } from "../utils/motion";
 import CourseCard from "../Components/CourseCard";
 import { ICourse } from "../Types";
 import { usePublishedCourses } from "../hooks/useCourses";
+import LoadingSpinner from "../Components/LoadingSpinner";
 import { useState } from "react";
 
 export default function AllCourses() {
@@ -11,13 +12,7 @@ export default function AllCourses() {
 
   if (isLoading) {
     return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="text-4xl font-bold text-center mt-40 fonts"
-      >
-        Loading...
-      </motion.div>
+       <LoadingSpinner/>
     );
   }
 
@@ -58,12 +53,11 @@ export default function AllCourses() {
       className="flex flex-col items-center justify-center gap-10 py-16"
     >
       {/* Title */}
-      <motion.h1
-        variants={textVariant(0.2)}
+      <h1
         className="text-4xl lg:text-6xl fonts capitalize text-center"
       >
         Explore Our Courses
-      </motion.h1>
+      </h1>
 
       {/* Categories */}
       <ul className="flex items-center flex-wrap p-4 gap-4 justify-center">

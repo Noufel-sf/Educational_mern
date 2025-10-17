@@ -16,7 +16,7 @@ function Navbarr() {
 
 
   return (
-    <nav className={`w-full lg:w-[80%] mx-auto flex items-center justify-between py-12 px-4 relative fonts`}>
+    <nav className={`w-full lg:w-[60%] mx-auto flex items-center justify-between py-12 px-4 relative fonts`}>
       <div className="text-2xl font-bold app-impact-font tracking-widest">
         <Link to="/">
           <img src="/logo.png" alt="Logo" />

@@ -10,7 +10,7 @@ import UpdateProfileDialog from "../Components/UpdateProfiledialog";
 import CourseCard from "../Components/CourseCard";
 import api from "@/App/Api/api";
 import toast from "react-hot-toast";
-
+import LoadingSpinner from "../Components/LoadingSpinner";
 interface Teacher {
   _id: string;
   name: string;
@@ -47,7 +47,7 @@ export default function TeacherProfile() {
 
 
   if (isLoading) {
-    return <p className="text-center mt-20">Loading profile...</p>;
+    return <LoadingSpinner/>;
   }
 
   if (isError) {
@@ -70,14 +70,14 @@ export default function TeacherProfile() {
           <img
             src={teacher?.profileimg}
             alt={teacher.name}
-            className="rounded-full w-58 h-58 object-cover shadow-md bg-[var(--secondary-color)]"
+            className=" w-68 h-78 rounded-lg object-cover  border-[var(--primary-color)] shadow-md bg-[var(--secondary-color)]"
           />
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-3">
           <div className="flex items-center gap-4">
-            <h1 className="text-3xl md:text-5xl font-bold capitalize fonts">
+            <h1 className="text-3xl md:text-6xl font-bold capitalize fonts">
               {teacher.name}
             </h1>
 
@@ -93,22 +93,26 @@ export default function TeacherProfile() {
             {teacher.domain || "No domain specified"}
           </h2>
 
-          <p className="font-bold max-w-xl">
+
+          <p className="text-4xl capitalize max-w-xl mt-12">
+            biography
+          </p>
+          <p className="text-md text-gray-600 ">
             {teacher.bio ||
               "This teacher has not provided a bio yet. Stay tuned!"}
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold capitalize fonts">
+          <h3 className="text-xl md:text-4xl mt-12 font-bold capitalize fonts">
             Experiences
           </h3>
-          <p className="max-w-xl font-bold">
+          <p className=" font-bold">
             {teacher.Experiences ||
               "This teacher has not shared experiences yet."}
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-4 mt-12">
             <div className="flex items-center gap-3">
-              <h3 className="text-xl md:text-2xl font-bold capitalize fonts">
+              <h3 className="text-xl md:text-4xl font-bold capitalize fonts">
                 Available Courses
               </h3>
               {isOwner && (

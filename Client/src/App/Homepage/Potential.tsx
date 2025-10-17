@@ -18,13 +18,13 @@ function Potential() {
     >
       <motion.h2 
         variants={textVariant(0.3)}
-        className='text-4xl md:text-5xl fonts font-bold mb-4 lg:w-1/2 text-center'
+        className='text-4xl md:text-5xl fonts font-bold mb-4 lg:w-1/2 text-center lg:text-start'
       >
         Unlock Your Potential <br /> with digital skills mastery
       </motion.h2>
       <motion.p 
         variants={fadeIn("up", 0.5)}
-        className='text-gray-600 text-xl text-center lg:max-w-1/2'
+        className='text-gray-600 text-xl text-center lg:text-start lg:max-w-1/3'
       >
        Achieve excellence by mastering digital skills, empowering yourself to exceed expectations, drive innovation, and unlock new levels of success.
       </motion.p>
@@ -35,7 +35,7 @@ function Potential() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="flex flex-col items-center lg:flex-row justify-center w-[80%]  gap-10"
+      className="flex flex-col items-center lg:flex-row justify-center w-[80%]  gap-5"
     >
       {PotentialList.map((item, index) => (
         <motion.div 
@@ -46,7 +46,10 @@ function Potential() {
         >
           <img src={item.img} alt={item.heading} className="w-16 h-16 mb-2" />
           <h3 className="text-2xl capitalize font-semibold text-black fonts">{item.heading}</h3>
-          <p className="text-gray-600 text-center max-w-1/2">{item.text}</p>
+          <p className="text-gray-600 text-center max-w-[80%]">{item.text}</p>
+          <button className="fonts bg-[var(--primary-color)] text-white px-4 py-2 rounded-full mt-4 hover:opacity-90 transition">
+            Learn More
+          </button>
         </motion.div>
       ))}
     </motion.div>

@@ -5,12 +5,18 @@ html {
   scroll-behavior: smooth;
 }
 
-.fonts {
+/* .fonts {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
+*{
+    font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
 
 
 
