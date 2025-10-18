@@ -19,6 +19,7 @@ import AddCourse from "./ui/AddCourse";
 import About from "./Aboutuspage/About";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import StudentProfile from "./UsersProfiles/StudentProfile";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 
 function Pages() {
@@ -45,7 +46,17 @@ function Pages() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/coursevideo/:id" element={<CourseVideo />} />
           <Route path="/addcourse" element={<AddCourse />} />
-          <Route path="/admin" element={<Admin />} />
+
+          <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Admin />
+                </ProtectedRoute>
+              }
+            />
+      
+        
         </Routes>
         </QueryClientProvider>
       </LayoutWrapper>

@@ -13,7 +13,7 @@ const Banner = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className={`container mx-auto py-20 px-4 rounded-3xl shadow-sm mt-50 max-w-[90%]`} 
+      className={`container mx-auto  py-20 px-4 rounded-3xl shadow-sm mt-50 max-w-[90%]`} 
       style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover' }}
     >
       <motion.div 

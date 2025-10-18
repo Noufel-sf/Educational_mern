@@ -12,16 +12,14 @@ interface UserRowProps {
 }
 
 const UserRow: React.FC<UserRowProps> = ({ user }) => (
-    <tr className="hover:bg-[#f5effc]">
+    <tr className="">
       <td className="px-6 py-4 whitespace-nowrap">
         <div className="flex items-center">
           <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center">
-            <span className="text-xl capitalize font-medium text-gray-700">
-            {user.name?.charAt(0) || "U"}
-          </span>
-        </div>
-        <div className="ml-4">
-          <div className="text-sm font-medium text-gray-900">{user.name}</div>
+            <img className="w-10 h-10 object-cover rounded-full" src={user.profileimg || "default.png"} alt={user.name} />
+          </div>
+          <div className="ml-4">
+            <div className="text-sm font-medium ">{user.name}</div>
         </div>
       </div>
     </td>
@@ -45,7 +43,7 @@ const UserRow: React.FC<UserRowProps> = ({ user }) => (
         >
           <Trash2 className="h-4 w-4" />
         </button>
-        <Link to={`/teacher/${user._id}`}>
+        <Link to={`/${user.role}/${user._id}`}>
           <button className="capitalize text-sm fonts font-bold cursor-pointer py-2 px-4 rounded-full text-white bg-[var(--primary-color)]">
             Visit
           </button>
@@ -78,10 +76,10 @@ const UsersContent = ({Allusers}) => {
         </div>
       </div>
 
-      <div className="bg-white shadow-sm border rounded-lg overflow-hidden">
+      <div className=" shadow-sm border-2 border-gray-600 rounded-lg overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-200">
           <div className="flex items-center justify-between">
-            <h3 className="text-2xl font-extrabold text-gray-900">All Users</h3>
+            <h3 className="text-2xl font-extrabold ">All Users</h3>
             <div className="relative">
               <Search className="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
@@ -96,7 +94,7 @@ const UsersContent = ({Allusers}) => {
         </div>
 
         <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+          <thead className="">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 User
@@ -113,7 +111,7 @@ const UsersContent = ({Allusers}) => {
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="">
             {(
               Allusers.map((user) => (
                 <UserRow key={user._id} user={user} />

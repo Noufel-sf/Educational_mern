@@ -122,3 +122,31 @@ export const logout = async (_req: Request, res: Response) => {
   clearAuthCookie(res);
   return res.json({ ok: true });
 };
+
+
+
+export const CheckAdmin = async (req: Request, res: Response) => {
+  try {
+    if (req.session && req.session.isAdmin) {
+      return res.json({ isAdmin: true });
+    }
+    return res.json({ isAdmin: false });
+  } catch (error) {
+    console.error("Error checking admin status:", error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+
+export const DashboardLogin = async (req: Request, res: Response) => {
+    const adminName = req.session.adminName;
+
+  // Respond with data
+  res.json({
+    message: 'Welcome to admin dashboard',
+    adminName
+  });
+
+  // Destroy session right after sending data
+  req.session.destroy();
+}

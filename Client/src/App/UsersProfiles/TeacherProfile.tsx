@@ -10,16 +10,12 @@ import UpdateProfileDialog from "../Components/UpdateProfiledialog";
 import CourseCard from "../Components/CourseCard";
 import api from "@/App/Api/api";
 import toast from "react-hot-toast";
+import { Teacher } from "../Types";
 import LoadingSpinner from "../Components/LoadingSpinner";
-interface Teacher {
-  _id: string;
-  name: string;
-  profileimg?: string;
-  bio?: string;
-  Experiences?: string;
-  domain?: string;
-  Courses: ICourse[];
-}
+
+
+
+
 
 export default function TeacherProfile() {
   const { id } = useParams();
@@ -97,7 +93,7 @@ export default function TeacherProfile() {
           <p className="text-4xl capitalize max-w-xl mt-12">
             biography
           </p>
-          <p className="text-md text-gray-600 ">
+          <p className="text-md ">
             {teacher.bio ||
               "This teacher has not provided a bio yet. Stay tuned!"}
           </p>

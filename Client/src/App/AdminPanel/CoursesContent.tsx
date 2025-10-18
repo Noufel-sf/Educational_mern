@@ -30,7 +30,7 @@ const CourseRow = ({ course , handleDeleteCourse }: { course: ICourse , handleDe
 
   return (
     <>
-      <tr className="hover:bg-gray-50">
+      <tr className="">
         {/* Cover */}
         <td className="px-6 py-4 whitespace-nowrap">
           <img
@@ -41,7 +41,7 @@ const CourseRow = ({ course , handleDeleteCourse }: { course: ICourse , handleDe
         </td>
 
         {/* Title */}
-        <td className="px-5 py-4 whitespace-nowrap font-bold text-gray-900">
+        <td className="px-5 py-4 whitespace-nowrap font-bold">
           {course.title}
         </td>
 
@@ -176,10 +176,10 @@ const CoursesContent = ({
         </div>
      
       </div>
-       
-        <div className="bg-white shadow-sm border rounded-lg overflow-hidden">
+
+        <div className=" shadow-sm border-2 border-gray-700 rounded-lg overflow-hidden">
           <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-            <h3 className="text-2xl text-[var(--primary)] font-extrabold">All Courses</h3>
+            <h3 className="text-2xl font-extrabold">All Courses</h3>
             <div className="relative">
               <Search className="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
@@ -192,16 +192,16 @@ const CoursesContent = ({
           </div>
 
           <table className="w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+            <thead className="">
               <tr>
-                <th className="px-6 py-3 text-left text-xl font-extrabold text-gray-500 uppercase">cover</th>
-                <th className="px-6 py-3 text-left text-xl font-extrabold text-gray-500 uppercase">title</th>
-                <th className="px-6 py-3 text-left text-xl font-extrabold text-gray-500 uppercase">state</th>
-                <th className="px-6 py-3 text-left text-xl font-extrabold text-gray-500 uppercase">Price</th>
-                <th className="px-20 py-3 text-right text-xl font-extrabold text-gray-500 uppercase">Actions</th>
+                <th className="px-6 py-3 text-left text-xl font-extrabold uppercase">cover</th>
+                <th className="px-6 py-3 text-left text-xl font-extrabold uppercase">title</th>
+                <th className="px-6 py-3 text-left text-xl font-extrabold uppercase">state</th>
+                <th className="px-6 py-3 text-left text-xl font-extrabold uppercase">Price</th>
+                <th className="px-20 py-3 text-right text-xl font-extrabold uppercase">Actions</th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className=" divide-y divide-gray-200">
               {Courses.map((course : ICourse) => (
                 <CourseRow
                     key={course._id}

@@ -4,7 +4,7 @@ import { Menu, Search } from "lucide-react";
 function AdminMainContent({ content, setSidebarOpen }: { content: React.ReactNode, setSidebarOpen: (open: boolean) => void }) {
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
-        <header className="bg-white shadow-sm border-b h-16 flex items-center justify-between px-6">
+        <header className=" shadow-sm border-b h-16 flex items-center justify-between px-6">
           <div className="flex items-center">
             <button
               onClick={() => setSidebarOpen(true)}

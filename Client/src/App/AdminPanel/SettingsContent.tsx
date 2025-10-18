@@ -3,15 +3,15 @@ import React from "react";
 const SettingsContent = () => (
   <div className="space-y-6">
     <div>
-      <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
+      <h1 className="text-5xl font-bold mb-3 ">Settings</h1>
       <p className="text-gray-600">
         Manage your application settings and preferences.
       </p>
     </div>
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="bg-white p-6 rounded-lg shadow-sm border">
-        <h3 className="text-lg font-medium text-gray-900 mb-4">
+      <div className=" p-6 rounded-lg shadow-sm border-2 border-gray-600">
+        <h3 className="text-lg font-medium  mb-4">
           General Settings
         </h3>
         <div className="space-y-4">
@@ -38,8 +38,8 @@ const SettingsContent = () => (
         </div>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-sm border">
-        <h3 className="text-lg font-medium text-gray-900 mb-4">
+      <div className=" p-6 rounded-lg shadow-sm border-2 border-gray-600 ">
+        <h3 className="text-lg font-medium  mb-4">
           Notifications
         </h3>
         <div className="space-y-4">
@@ -65,7 +65,7 @@ const SettingsContent = () => (
     </div>
 
     <div className="flex justify-end">
-      <button className="px-4 py-2  text-white rounded-md bg-black p-4 hover:bg-[var(--primary-color)] transition">
+      <button className="px-4 py-2  text-white rounded-md bg-black cursor-pointer p-4 hover:bg-[var(--primary-color)] transition">
         Save Changes
       </button>
     </div>

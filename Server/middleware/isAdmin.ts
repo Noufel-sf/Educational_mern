@@ -1,7 +1,7 @@
 // middlewares/isAdmin.js
 import { Request, Response, NextFunction } from 'express';
 
-function isAdmin(req: Request, res: Response, next: NextFunction) {
+export function isAdmin(req: Request, res: Response, next: NextFunction) {
   console.log('isAdmin middleware - Session:', req.session);
   
   if (req.session && req.session.isAdmin) {
@@ -16,4 +16,5 @@ function isAdmin(req: Request, res: Response, next: NextFunction) {
   });
 }
 
-module.exports = isAdmin;
+
+

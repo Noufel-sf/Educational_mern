@@ -85,8 +85,8 @@ const handleUpdateStudent = async () => {
 
 
   return (
-    <div title="Edit Profile">
-      <div className="space-y-4">
+    <div title="Edit Profile" >
+      <div className="space-y-4 text-gray-600">
 
 
          <div className="relative w-24 h-24">
@@ -97,7 +97,7 @@ const handleUpdateStudent = async () => {
           />
           <label
             htmlFor="profile-upload"
-            className="absolute bottom-0 right-0 bg-[var(--primary-color)] text-white p-2 rounded-full cursor-pointer hover:bg-[var(--secondary-color)]"
+            className="absolute bottom-0 right-0 bg-[var(--primary-color)]  p-2 rounded-full cursor-pointer hover:bg-[var(--secondary-color)]"
           >
             <FiEdit />
           </label>
@@ -132,7 +132,7 @@ const handleUpdateStudent = async () => {
             placeholder="Domain"
             value={formData.domain || ""}
             onChange={handleChange}
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded "
           />
         )}
         {UserRole === "teacher" && (

@@ -35,3 +35,21 @@ export interface state {
   value: number;
   color: string;
 }
+
+export interface Teacher {
+  _id: string;
+  name: string;
+  profileimg?: string;
+  bio?: string;
+  Experiences?: string;
+  domain?: string;
+  Courses: ICourse[];
+}
+
+export interface Student {
+  _id: string;
+  name: string;
+  email: string;
+  profileimg?: string;
+  bio?: string;
+}

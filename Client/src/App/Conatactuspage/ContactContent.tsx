@@ -9,7 +9,7 @@ function ContactContent() {
       variants={staggerContainer(0.1, 0.1)}
       initial="hidden"
       animate="show"
-      className="flex container mx-auto flex-col lg:flex-row items-center gap-5 max-w-[90%] md:gap-12 mt-10"
+      className="flex container mx-auto flex-col lg:flex-row items-center gap-5 max-w-[90%] lg:w-[60%] md:gap-12 mt-10"
     >
       {/* LEFT CONTENT */}
       <div className="max-w-4xl mx-auto text-center">

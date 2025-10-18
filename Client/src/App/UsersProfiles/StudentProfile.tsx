@@ -3,14 +3,32 @@ import { MdOutlineEditNote } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import api from "@/App/Api/api";
 import UpdateProfileDialog from "../Components/UpdateProfiledialog";
+import { useQuery } from "@tanstack/react-query";
+import { fetchStudent } from "../Services/StudentService";
+import { Student } from "../Types";
 import UpdateProfileDialogContent from "../Components/UpdateProfileDialogContent";
 import { useAuthStore } from "../ZustandState/GlobaleState";
+import LoadingSpinner from "../Components/LoadingSpinner";
 import toast from "react-hot-toast";
 
 function StudentProfile() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { user, setUser } = useAuthStore();
-  
+  const { id } = useParams();
+
+  const {
+    data: student,
+    isLoading,
+    isError,
+    error,
+  } = useQuery<Student>({
+    queryKey: ["student", id],
+    queryFn: () => fetchStudent(id!),
+    enabled: !!id,
+  });
+
+  const isOwner = user?.id === student?._id;
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -19,19 +37,16 @@ function StudentProfile() {
   const [formData, setFormData] = useState({
     name: user?.name || "",
     bio: user?.bio || "",
-    profileimg :user?.profileimg || "" ,
+    profileimg: user?.profileimg || "",
   });
-  
- 
-  
 
   return (
     <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12 mt-20 px-6">
       {/* Left Side */}
       <div className="flex-shrink-0 relative">
         <img
-          src={user?.profileimg}
-          alt={user?.name}
+          src={student?.profileimg}
+          alt={student?.name}
           className="rounded-full w-58 h-58 object-cover shadow-md bg-[var(--secondary-color)]"
         />
       </div>
@@ -39,21 +54,23 @@ function StudentProfile() {
       {/* Right Side */}
       <div className="flex-1 space-y-6">
         <div className="flex items-start flex-col gap-4">
-          <MdOutlineEditNote
-            className="cursor-pointer text-4xl p-2 bg-[var(--primary-color)] rounded-full text-white"
-            onClick={() => setIsModalOpen(true)}
-          />
-          <h1 className="text-5xl fonts capitalize">{user?.name}</h1>
-          <p className="text-2xl font-bold">{user?.bio}</p>
-          </div>
+          {isOwner && (
+            <MdOutlineEditNote
+              className="cursor-pointer text-4xl p-2 bg-[var(--primary-color)] rounded-full text-white"
+              onClick={() => setIsModalOpen(true)}
+            />
+          )}
+          <h1 className="text-5xl fonts capitalize">{student?.name}</h1>
+          <p className="text-2xl font-bold">{student?.bio}</p>
+        </div>
       </div>
-      
+
       <UpdateProfileDialog
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title={"Update Profile"}
       >
-        <UpdateProfileDialogContent 
+        <UpdateProfileDialogContent
           setIsModalOpen={setIsModalOpen}
           id={user?.id}
           CurrentUser={user}

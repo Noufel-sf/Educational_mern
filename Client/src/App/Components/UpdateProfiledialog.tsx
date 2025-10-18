@@ -12,11 +12,11 @@ export default function UpdateProfileDialog({ isOpen, onClose, title, children }
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-150">
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-150 text-gray-600">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 cursor-pointer text-gray-500 hover:text-gray-800"
+          className="absolute top-3 right-3 cursor-pointer hover:text-gray-800"
         >
           ✖
         </button>

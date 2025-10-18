@@ -9,13 +9,13 @@ const fadeUp = {
 
 export default function AboutusContent() {
   return (
-    <section className="py-16">
+    <section className="py-16 lg:w-[60%] mx-auto max-w-[90%] flex flex-col gap-20">
       {/* First Section */}
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex container mx-auto flex-col lg:flex-row items-center gap-5 md:gap-12 mt-20"
+        className="flex container mx-auto flex-col lg:flex-row items-start gap-5 md:gap-12 mt-20"
       >
         {/* Left: Image */}
         <motion.div
@@ -29,11 +29,11 @@ export default function AboutusContent() {
           />
           <motion.div
             variants={fadeUp}
-            className="absolute bottom-12 left-12 p-5 bg-white shadow-lg lg:p-8 rounded-xl"
+            className="absolute bottom-12 left-12 p-3 bg-white shadow-lg lg:p-4 rounded-xl"
           >
             <p className="text-sm text-gray-500">Average Class Completion Rate</p>
             <p className="text-green-500 text-xs font-semibold">↑ 65+</p>
-            <p className="text-3xl font-bold text-gray-900">95%</p>
+            <p className="text-2xl font-bold text-gray-900">95%</p>
           </motion.div>
         </motion.div>
 
@@ -42,8 +42,8 @@ export default function AboutusContent() {
           variants={fadeUp}
           className="lg:w-1/2 space-y-6 px-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold fonts leading-snug">
-            Why Choose Us for Your <br /> Learning Journey
+          <h2 className="text-3xl lg:text-5xl font-bold fonts leading-snug">
+            Why Choose Us for Your  Learning Journey
           </h2>
           <p className="text-gray-600 max-w-xl">
             Explore courses that expand your digital abilities, covering key
